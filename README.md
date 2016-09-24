@@ -7,3 +7,8 @@ You may want to clone the getHackerNews repo and build from it for Hacker news t
 Just move all these files to .conky, replace the username and run the conkyscript.sh
 
 Works best with openbox and compton
+
+
+Screenshot:
+
+![alt text](https://github.com/sudsred/POIConky/blob/master/poi.jpg)
