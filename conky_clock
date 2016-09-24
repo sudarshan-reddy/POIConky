@@ -1,0 +1,58 @@
+conky.config = {
+
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+background=false,
+use_xft=true,
+font='Droid Sans :pixelsize=50',
+update_interval=1.0,
+total_run_times=0,
+own_window=true,
+own_window_type=desktop,
+own_window_argb_visual=true,
+own_window_argb_value=0,
+own_window_hints='undecorated,below,sticky,skip_taskbar,skip_pager',
+double_buffer=true,
+default_color='23232a',
+color2='a5adff',
+alignment='top_right',
+gap_x=65,
+gap_y=60,
+no_buffers=true,
+cpu_avg_samples=2,
+text_buffer_size=1024,
+
+
+-------------------------------------
+--  Text Settings
+-------------------------------------
+
+-------------------------------------
+--  Color Scheme
+-------------------------------------
+default_color='FFFFFF',
+
+color0='a5adff', -- clock
+color1='a5adff', -- date
+
+}
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+conky.text = [[
+${font Poiret One:weight=Light:size=96}${color0}\
+${alignc}${time %H:%M}\
+${font}${color}
+\
+\
+\
+\
+${font Poiret One:weight=Light:size=28}${color1}\
+${voffset 30}\
+${alignc}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A, %B %d"}\
+${font}${color}
+]]

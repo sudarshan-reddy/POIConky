@@ -1,0 +1,45 @@
+conky.config = {
+    update_interval=1,
+    background=false,
+    text_buffer_size=2048,
+    double_buffer=true,
+    no_buffers=true,
+    use_xft=true,
+    font='monospace:pixelsize=11',
+    draw_shades=false,
+    override_utf8_locale=true,
+    own_window=true,
+    own_window_type='normal',
+    own_window_class='Conky',
+    own_window_transparent=true,
+    own_window_hints='undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_colour='000000',
+
+	default_color = '#494a5b',
+	alignment = 'top_right',
+	gap_x = 90,
+	gap_y = 780,
+	minimum_width = 380, minimum_height = 200,
+	maximum_width = 430,
+};
+
+conky.text = [[
+╭╴               ╶╮
+     ${color a5adff}Hacker News${color }   
+╰╴               ╶╯ 
+${execi 1800 getHackerNews 0}
+${execi 1800 getHackerNews 1}
+${execi 1800 getHackerNews 2}
+${execi 1800 getHackerNews 3}
+${execi 1800 getHackerNews 4}
+${execi 1800 getHackerNews 5}
+${execi 1800 getHackerNews 6}
+${execi 1800 getHackerNews 7}
+${execi 1800 getHackerNews 8}
+${execi 1800 getHackerNews 9}
+${execi 1800 getHackerNews 10}
+${execi 1800 getHackerNews 11}
+${execi 1800 getHackerNews 12}
+${execi 1800 getHackerNews 13}
+${execi 1800 getHackerNews 14}
+]]

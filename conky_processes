@@ -1,0 +1,66 @@
+conky.config = {
+    update_interval=1,
+    background=false,
+    text_buffer_size=2048,
+    double_buffer=true,
+    no_buffers=true,
+    use_xft=true,
+    font='monospace:pixelsize=11',
+    draw_shades=false,
+    override_utf8_locale=true,
+    own_window=true,
+    own_window_type='normal',
+    own_window_class='Conky',
+    own_window_transparent=true,
+    own_window_hints='undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_colour='000000',
+
+	alignment = 'top_left',
+	gap_x = 670,
+	gap_y = 860,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	minimum_width = 600, minimum_height = 210,
+	maximum_width = 600,
+	color0 = '#494a5b',
+	default_color = '#a5adff',
+	color1 = '#494a5b',
+};
+
+conky.text = [[
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿ ❱❱❰❰
+${goto 130}${font Monospace:pixelsize=15}CPU${font}${goto 292}│${goto 430}${color0}${font Monospace:pixelsize=15}RAM${font}${color}                   
+
+╶┼╴                                     ╶┼╴                                      ╶┼╴
+#${execpi 5 top -b -n 1 -o %CPU | head -n 20  | tail -n 6 | awk '{print $12, $9}' | column -t -o "      " | sed 's/^/         /'}
+${color}${top name 1} ${goto 105}${top pid 1}${goto 138}${top cpu 1}${goto 179}${top mem 1}${color0}${goto 300}${top_mem name 1} ${goto 405}${top_mem pid 1}${goto 438}${top_mem cpu 1}${goto 479}${top_mem mem 1}
+${color}${top name 2} ${goto 105}${top pid 2}${goto 138}${top cpu 2}${goto 179}${top mem 2}${color0}${goto 300}${top_mem name 2} ${goto 405}${top_mem pid 2}${goto 438}${top_mem cpu 2}${goto 479}${top_mem mem 2}
+${color}${top name 3} ${goto 105}${top pid 3}${goto 138}${top cpu 3}${goto 179}${top mem 3}${color0}${goto 300}${top_mem name 3} ${goto 405}${top_mem pid 3}${goto 438}${top_mem cpu 3}${goto 479}${top_mem mem 3}
+${color}${top name 4} ${goto 105}${top pid 4}${goto 138}${top cpu 4}${goto 179}${top mem 4}${color0}${goto 300}${top_mem name 4} ${goto 405}${top_mem pid 4}${goto 438}${top_mem cpu 4}${goto 479}${top_mem mem 4}
+${color}${top name 5} ${goto 105}${top pid 5}${goto 138}${top cpu 5}${goto 179}${top mem 5}${color0}${goto 300}${top_mem name 5} ${goto 405}${top_mem pid 5}${goto 438}${top_mem cpu 5}${goto 479}${top_mem mem 5}
+${color}${top name 6} ${goto 105}${top pid 6}${goto 138}${top cpu 6}${goto 179}${top mem 6}${color0}${goto 300}${top_mem name 6} ${goto 405}${top_mem pid 6}${goto 438}${top_mem cpu 6}${goto 479}${top_mem mem 6}
+${color}${top name 7} ${goto 105}${top pid 7}${goto 138}${top cpu 7}${goto 179}${top mem 7}${color0}${goto 300}${top_mem name 7} ${goto 405}${top_mem pid 7}${goto 438}${top_mem cpu 7}${goto 479}${top_mem mem 7}
+${color}${top name 8} ${goto 105}${top pid 8}${goto 138}${top cpu 8}${goto 179}${top mem 8}${color0}${goto 300}${top_mem name 8} ${goto 405}${top_mem pid 8}${goto 438}${top_mem cpu 8}${goto 479}${top_mem mem 8}
+${color}${top name 9} ${goto 105}${top pid 9}${goto 138}${top cpu 9}${goto 179}${top mem 9}${color0}${goto 300}${top_mem name 9} ${goto 405}${top_mem pid 9}${goto 438}${top_mem cpu 9}${goto 479}${top_mem mem 9}
+
+
+
+${voffset -60}${color0}${execpi 5 top -b -n 1 -o %MEM | head -n 15  | tail -n 8 | awk '{print $12, $10}' | column -t -o "      " | sed 's/^/${goto 370}/'}${color}
+╶┼╴                                                                              ╶┼╴
+
+
+${goto 70}${color1}${exec grep [0-9] /proc/loadavg | awk '{print $1}'}    ${exec grep [0-9] /proc/loadavg | awk '{print $2}'}    ${exec grep [0-9] /proc/loadavg | awk '{print $3}'}
+${voffset -13}${goto 360}$mem / $memmax - ${fs_used_perc /tmp}% tmp${color}
+${image /home/sudarshan/.conky/processes.png -p 0,30 -n}
+]];
+
+
+
+
+
+
+
+
+
+
+
